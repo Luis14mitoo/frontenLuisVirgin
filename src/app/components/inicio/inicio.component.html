@@ -1,0 +1,180 @@
+<div class="container mb-3">
+  <div class="container bg-warning mt-3">
+    Crear Persona
+
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{ personaC.nombres }}</label>
+      <div class="col-sm-10 mb-2">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="personaD.nombres"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{ personaC.apellidos }}</label>
+      <div class="col-sm-10 mb-2">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="personaD.apellidos"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{
+        personaC.tipo_documento
+      }}</label>
+      <div class="col-sm-10 mb-2">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="personaC.tipo_documento"
+        />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{ personaC.cedula }}</label>
+      <div class="col-sm-10 mb-2">
+        <input type="text" class="form-control" [(ngModel)]="personaD.cedula" />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{
+        personaC.fecha_nacimiento
+      }}</label>
+      <div class="col-sm-10 mb-2">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="personaD.fecha_nacimiento"
+        />
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{ personaC.direccion }}</label>
+      <div class="col-sm-10 mb-2">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="personaD.direccion"
+        />
+      </div>
+    </div>
+
+    <button (click)="reiniciar()" type="button" class="btn btn-primary">
+      Aceptar
+    </button>
+  </div>
+
+  <!--Remover  empleado ==================================================     -->
+
+  <div class="container bg-secondary text-light mt-3">
+    Remover empleado
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{ personaC.id }}</label>
+      <div class="col-sm-10 mb-2">
+        <input type="text" class="form-control" [(ngModel)]="personaD.id" />
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary">Aceptar</button>
+  </div>
+
+  <!--Actualizar empleado ==================================================     -->
+  <div class="container bg-warning mt-3">
+    Actualizar empleado
+
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{ personaC.id }}</label>
+      <div class="col-sm-10 mb-2">
+        <input type="text" class="form-control" [(ngModel)]="id_empleado" />
+      </div>
+      <button
+        (click)="traerEmpleado()"
+        type="button"
+        class="btn btn-primary ml-3"
+      >
+        Aceptar
+      </button>
+    </div>
+
+    <hr />
+    <br />
+
+    <div *ngIf="empleadoD.nombres">
+      <!-- ///////////////////////////////////   -->
+      <div class="mb-3 row">
+        <label class="col-sm-5 col-form-label"
+          >{{ empleadoC.nombres }} modificados para:
+          {{ empleadoB.nombres }}</label
+        >
+        <div class="col-sm-7 mb-2">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="empleadoD.nombres"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label class="col-sm-5 col-form-label"
+          >{{ empleadoC.apellidos }} modificados para:
+          {{ empleadoB.apellidos }}</label
+        >
+        <div class="col-sm-7 mb-2">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="empleadoD.apellidos"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label class="col-sm-5 col-form-label"
+          >{{ empleadoC.ciudad }} modificados para:
+          {{ empleadoB.ciudad }}</label
+        >
+        <div class="col-sm-7 mb-2">
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="empleadoD.ciudad"
+          />
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary">Aceptar</button>
+    </div>
+  </div>
+
+  <!--Buscar empleado ==================================================     -->
+  <div class="container bg-secondary text-light mt-3">
+    Buscar Empleado
+
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">{{ empleadoC.id }}</label>
+      <div class="col-sm-10 mb-2">
+        <input type="text" class="form-control" [(ngModel)]="empleadoD.id" />
+      </div>
+      <button
+        (click)="traerEmpleado()"
+        type="button"
+        class="btn btn-primary ml-3"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+
+  <!--Traer todos los  empleado ==================================================     -->
+  <div class="container bg-warning mt-3">
+    <label class="col-sm-6 col-form-label">Traer todos los empleados</label>
+    <div class="col-sm-6">
+      <button type="button" class="btn btn-primary mb-3">Aceptar</button>
+    </div>
+  </div>
+</div>
